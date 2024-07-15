@@ -11,6 +11,7 @@ import { IoCompassOutline } from "react-icons/io5";
 import { IoMdSend } from "react-icons/io";
 import { IoCodeSlash } from "react-icons/io5";
 import { FaQuestion } from "react-icons/fa6";
+import { FcBusinessman } from "react-icons/fc";
 
 export const assets={
     IoMdMenu , //menu
@@ -26,4 +27,5 @@ export const assets={
     IoMdSend,//send
     IoCodeSlash,// code
     FaQuestion,//question
+    FcBusinessman,//dp
 }

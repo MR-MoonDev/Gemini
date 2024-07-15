@@ -6,7 +6,7 @@ const SideBar = () => {
   return (
     // parent div 
 
-    <div className="bg-blue-500 px-3 h-screen flex flex-col justify-between w-full md:w-max text-white">
+    <div className="bg-blue-500 px-5 h-screen flex flex-col justify-between w-full md:w-max text-white">
       {/* upper menu */}
       <div className="inline-flex flex-col space-y-5 mt-5">
         <div className="text-4xl mb-10 cursor-pointer">
@@ -27,7 +27,7 @@ const SideBar = () => {
         
       </div>
       {/* lower menu */}
-      <div className="mb-5 space-y-5">
+      <div className="mb-5 space-y-5 ">
         <div className="flex items-center text-md gap-3 cursor-pointer hover:text-blue-300 transition">
           <assets.FaQuestion />
         
