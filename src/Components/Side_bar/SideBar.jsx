@@ -4,11 +4,13 @@ import { assets } from "../../assets/assets";
 const SideBar = () => {
   const [extendsidebar,setextendsidebar] = useState(false);
   return (
+    // parent div 
+
     <div className="bg-blue-500 px-3 h-screen flex flex-col justify-between w-full md:w-max text-white">
       {/* upper menu */}
       <div className="inline-flex flex-col space-y-5 mt-5">
         <div className="text-4xl mb-10 cursor-pointer">
-          <assets.IoMdMenu onClick={()=>{setextendsidebar(prev=>!prev)}} />
+          <assets.IoMdMenu onClick={()=>{setextendsidebar(prev=>!prev)}} />    
         </div>
         <div className="flex items-center bg-blue-700 rounded-3xl p-3 justify-evenly cursor-pointer hover:bg-blue-600 transition">
           <assets.FaPlus /> {extendsidebar? <p>New Chat</p>:null}
@@ -16,7 +18,7 @@ const SideBar = () => {
          {extendsidebar?
         <div className="mt-10">
         <p className="text-lg font-semibold">Recent</p>
-        <div className="flex items-center gap-3 mt-3">
+        <div className="flex items-center gap-3 mt-3 p-1 rounded-md hover:bg-blue-600 transition">
           <assets.FiMessageSquare />
           <p>There is a recent chat</p>
         </div>
