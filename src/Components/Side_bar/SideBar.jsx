@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { assets } from "../../assets/assets";
+import { context } from "../../Context/Context";
 
 const SideBar = () => {
   const [extendsidebar,setextendsidebar] = useState(false);
+  const{onsend,prevPrompt,setrecentprompt}=useContext(context)
+  const loadprompt =async(prompt)=>{
+    setrecentprompt(prompt)   
+    await onsend(prompt)
+  }
   return (
     // parent div 
 
@@ -18,10 +24,16 @@ const SideBar = () => {
          {extendsidebar?
         <div className="mt-10">
         <p className="text-lg font-semibold">Recent</p>
-        <div className="flex items-center gap-3 mt-3 p-1 rounded-md hover:bg-blue-600 transition">
-          <assets.FiMessageSquare />
-          <p>There is a recent chat</p>
-        </div>
+        {prevPrompt.map((items,index)=>{
+          return(
+
+            <div onClick={()=>loadprompt(items)} className="flex items-center gap-3 mt-3 p-1 rounded-md hover:bg-blue-600 transition">
+            <assets.FiMessageSquare />
+            <p>{items.slice(0,18)}...</p>
+          </div>
+          )
+        })}
+       
       </div>:null 
         }
         
