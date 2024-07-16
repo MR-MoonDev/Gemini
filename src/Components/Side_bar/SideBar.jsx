@@ -4,7 +4,7 @@ import { context } from "../../Context/Context";
 
 const SideBar = () => {
   const [extendsidebar,setextendsidebar] = useState(false);
-  const{onsend,prevPrompt,setrecentprompt}=useContext(context)
+  const{onsend,prevPrompt,setrecentprompt,newChat}=useContext(context)
   const loadprompt =async(prompt)=>{
     setrecentprompt(prompt)   
     await onsend(prompt)
@@ -12,18 +12,19 @@ const SideBar = () => {
   return (
     // parent div 
 
-    <div className="bg-blue-500 px-5 h-screen flex flex-col justify-between w-full md:w-max text-white">
+    <div className="bg-blue-500 px-5 h-screen rounded-r-lg flex flex-col justify-between w-full md:w-max text-white">
       {/* upper menu */}
       <div className="inline-flex flex-col space-y-5 mt-5">
         <div className="text-4xl mb-10 cursor-pointer">
           <assets.IoMdMenu onClick={()=>{setextendsidebar(prev=>!prev)}} />    
         </div>
-        <div className="flex items-center bg-blue-700 rounded-3xl p-3 justify-evenly cursor-pointer hover:bg-blue-600 transition">
+        <div  onClick={()=>newChat()} className="flex items-center bg-blue-700 rounded-3xl p-3 justify-evenly cursor-pointer hover:bg-blue-600 transition">
           <assets.FaPlus /> {extendsidebar? <p>New Chat</p>:null}
         </div>
+
          {extendsidebar?
         <div className="mt-10">
-        <p className="text-lg font-semibold">Recent</p>
+        <p className="text-lg font-semibold">Recent chat</p>
         {prevPrompt.map((items,index)=>{
           return(
 

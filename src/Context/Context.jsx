@@ -15,6 +15,10 @@ const ContextProvider = (props) => {
       setresultdata((prev) => prev + nextword);
     }, 75 * index);
   };
+  const newChat =()=>{
+    setloading(false);
+    setshowResult(false);
+  }
   const onsend = async (prompt) => {
     setresultdata("");
     setloading(true);
@@ -61,6 +65,7 @@ else{
     loading,
     resultdata,
     onsend,
+    newChat
   };
   return (
     <context.Provider value={contextValue}>{props.children}</context.Provider>

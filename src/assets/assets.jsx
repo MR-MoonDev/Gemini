@@ -13,7 +13,7 @@ import { IoCodeSlash } from "react-icons/io5";
 import { FaQuestion } from "react-icons/fa6";
 import { FcBusinessman } from "react-icons/fc";
 import { FaArrowsDownToLine } from "react-icons/fa6";
-
+import mydp from "./my.jpg"
 export const assets={
     IoMdMenu , //menu
     FaPlus,//plus
@@ -30,4 +30,5 @@ export const assets={
     FaQuestion,//question
     FcBusinessman,//dp
     FaArrowsDownToLine,//arrow
+    mydp,
 }
